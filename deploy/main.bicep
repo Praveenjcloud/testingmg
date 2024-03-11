@@ -1,6 +1,7 @@
-targetScope = 'tenant' // Deploy to tenant scope
+targetScope = 'tenant'
 
-resource mg 'Microsoft.Management/managementGroups@2021-04-01' = {
-  name: 'neeee'
-  displayName: 'haii'
+param managementGroupName string = 'myManagementGroup'
+
+resource mgmtGroup 'Microsoft.Management/managementGroups@2021-04-01' = {
+  name: managementGroupName
 }
