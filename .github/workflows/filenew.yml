@@ -12,15 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Login to Azure
+    - name: Login to Azure (Optional)
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        auth-type: SERVICE_PRINCIPAL  # Assuming service principal authentication
+        creds: ${{ secrets.AZURE_ CREDENTIALS }}  # Assuming service principal authentication
+        auth-type: SERVICE_PRINCIPAL
     - name: Deploy Management Group
       uses: azure/arm-deploy@v1
-        with:
+      with:
           # Path to your Bicep file for management group
-          template: '.deploy/main.bicep'
+          template: './create-management-group.bicep'
           # Optional parameters for the Bicep file (if needed)
           # parameters: ...
