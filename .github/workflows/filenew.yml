@@ -15,7 +15,7 @@ jobs:
     - name: Login to Azure (Optional)
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_ CREDENTIALS }}  # Assuming service principal authentication
+        creds: ${{ secrets.AZURE_CREDENTIALS }}  # Assuming service principal authentication
         auth-type: SERVICE_PRINCIPAL
     - name: Deploy Management Group
       uses: azure/arm-deploy@v1
